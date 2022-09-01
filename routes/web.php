@@ -19,6 +19,7 @@ use App\Http\Controllers\HomeController;
 // });
 Route::get('/',[HomeController::class, 'index']);
 Route::get('/home',[HomeController::class, 'redirect']);
+Route::get('/buy__view',[HomeController::class, 'buy']);
 
 Route::middleware([
     'auth:sanctum',
@@ -29,3 +30,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::post('/upload_payment',[HomeController::class, 'pay']);
